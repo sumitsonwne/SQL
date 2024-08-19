@@ -1,0 +1,96 @@
+create database stringPractice
+---String pracrtice assignment number 2-----
+
+--Length of the string---
+select LEN('SumitVilasSonwane')----17
+select LEN('IndiaIsMyCountry')----16
+
+----Upper-----
+
+select UPPER('sumit');--------SUMIT
+
+----Lower----
+select LOWER('SUMIT');-------sumit
+
+---creating a table for pracice--
+create table sumitsonwne(
+id int,
+name varchar(50),
+age int
+);
+insert into sumitsonwne (id,name,age) values (21,'SumitSonwane',20);
+insert into sumitsonwne (id,name,age) values (22,'AumitSonwane',21);
+insert into sumitsonwne (id,name,age) values (23,'PumitSonwane',23);
+insert into sumitsonwne (id,name,age) values (24,'KumitSonwane',26);
+insert into sumitsonwne (id,name,age) values (25,'RumitSonwane',28);
+
+SELECT id, LOWER(name) AS name
+FROM sumitsonwne
+WHERE id = 25;
+
+--------left------
+SELECT id, LEFT(name,4) AS name
+FROM sumitsonwne
+WHERE id = 25;
+
+-----right----
+SELECT id, RIGHT(name,4) AS name
+FROM sumitsonwne
+WHERE id = 25;
+
+----Ltrim---
+
+SELECT id, Ltrim(name) AS name
+FROM sumitsonwne
+WHERE id = 25;
+
+---Rtrim----
+SELECT id, Rtrim(name) AS name
+FROM sumitsonwne
+WHERE id = 25;
+
+----------------Ltrim(Rtrim)----------------
+SELECT id, LTRIM(RTRIM(name)) AS name
+FROM sumitsonwne
+WHERE id = 25;
+
+---------------------Reverse---------------------
+SELECT id, Reverse(name) AS name
+FROM sumitsonwne
+WHERE id = 22;------------    enawnoStimuA
+
+---------------------Replace---------------
+SELECT id, Replace(name,'i','ee') AS name
+FROM sumitsonwne
+WHERE id = 22; ------- AumeetSonwane
+
+--------------------SubString------------------
+
+SELECT id, SubString(name,3,12) AS name
+FROM sumitsonwne
+WHERE id = 22; -----mitSonwane
+
+-------------Stuff------------------------
+SELECT id, Stuff(name,3,4,'heis') AS name
+FROM sumitsonwne
+WHERE id = 22; ----- Auheisonwane
+
+--------------------Replicate-----------------
+SELECT id, Replicate(name,3) AS name
+FROM sumitsonwne
+WHERE id = 22; -----   AumitSonwaneAumitSonwaneAumitSonwane
+
+---------------Charindex---------------------
+SELECT id, CHARINDEX('Son', name) AS position
+FROM sumitsonwne
+WHERE id = 22;---------6
+
+---R#oh@it  ---> Rohit
+---Mo@hi#t  ----> Mohit
+ 
+-- For 'R#oh@it' to 'Rohit'
+SELECT REPLACE(REPLACE('R#oh@it', '#', ''), '@', '') AS Result;-----Rohit
+
+-- For 'Mo@hi#t' to 'Mohit'
+SELECT REPLACE(REPLACE('Mo@hi#t', '@', ''), '#', '') AS Result;-----Mohit
+
