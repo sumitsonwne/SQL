@@ -1,0 +1,10 @@
+CASE statement in SQL is used when you need to apply conditional logic within your queries. It allows you to perform actions based on specific conditions
+
+select column1,column2,
+case
+when salary > 70000 then 'high'
+when salary between 40000 and 60000 then 'Medium'
+else 'low'
+end as  newname
+from tablename
+
