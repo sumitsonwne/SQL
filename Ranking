@@ -1,0 +1,16 @@
+1.rank() 
+-- Assigns a rank to each employee based on descending salary, with gaps for ties.
+
+select rank() over (order by salary desc) from emp as newValue;
+-- Assigns a rank to each employee based on descending salary, without gaps for ties.
+2.Dense_rank()
+select Dense_rank() over (order by salary desc) from emp as newValue;
+
+3.row_number()
+-- Assigns a unique row number to each employee based on descending salary.
+
+select row_number() over (order by salary desc) from emp as newValue;
+
+4.Ntile
+-- Divides employees into 9 tiles based on descending salary.
+select Ntile(9) over (order by salary desc) from emp as newValue;
